@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import RecordManagerDialog from "@/components/RecordManagerDialog";
 import Top3Leaderboard from "@/components/Top3Leaderboard";
 import { createRecord } from "@/lib/sheetService";
+import { MASCOT_BASE64 } from "@/lib/mascotBase64";
 import { Play, Pause, RotateCcw, Power, Heart, Volume2, VolumeX, Trophy, AlertTriangle, CheckCircle2, ThumbsUp } from "lucide-react";
 
 // 블록 색상 정의
@@ -706,7 +707,7 @@ export default function BrickBreakerApp() {
               <div className="relative w-40 h-40 sm:w-48 sm:h-48 mb-4 rounded-2xl overflow-hidden border-2 border-indigo-500/30 shadow-xl bg-slate-800/60 p-2 flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/Mascot.jpg"
+                  src={MASCOT_BASE64}
                   alt="인천대학교 마스코트 횃불이"
                   className="w-full h-full object-contain"
                 />
