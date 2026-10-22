@@ -705,7 +705,7 @@ export default function BrickBreakerApp() {
               {/* 인천대학교 마스코트 횃불이 */}
               <div className="relative w-40 h-40 sm:w-48 sm:h-48 mb-4 rounded-2xl overflow-hidden border-2 border-indigo-500/30 shadow-xl bg-slate-800/60 p-2">
                 <Image
-                  src="/mascot.jpg"
+                  src="/Mascot.jpg"
                   alt="인천대학교 마스코트 횃불이"
                   fill
                   priority
