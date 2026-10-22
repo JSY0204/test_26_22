@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const GOOGLE_SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+const GOOGLE_SCRIPT_URL =
+  process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL ||
+  "https://script.google.com/macros/s/AKfycbyj5CxqvmKzKq5K35iT3zZ3xsvCGpWZBEEe_i37xjeL1ajlu2GOYwAfJTJbb5u9CCNJXg/exec";
 
 export async function GET(req: NextRequest) {
   if (!GOOGLE_SCRIPT_URL) {

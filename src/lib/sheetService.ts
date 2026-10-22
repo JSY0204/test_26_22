@@ -6,7 +6,14 @@ export interface RecordItem {
   seconds?: number;
 }
 
+const FALLBACK_GAS_URL =
+  "https://script.google.com/macros/s/AKfycbyj5CxqvmKzKq5K35iT3zZ3xsvCGpWZBEEe_i37xjeL1ajlu2GOYwAfJTJbb5u9CCNJXg/exec";
+
 const LOCAL_STORAGE_KEY = "inu_brick_game_records";
+
+function getGasUrl(): string {
+  return process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || FALLBACK_GAS_URL;
+}
 
 function getLocalRecords(): RecordItem[] {
   if (typeof window === "undefined") return [];
