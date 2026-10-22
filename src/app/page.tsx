@@ -703,13 +703,12 @@ export default function BrickBreakerApp() {
           <div className="w-full max-w-2xl flex flex-col items-center">
             <div className="w-full bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col items-center text-center shadow-2xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-300">
               {/* 인천대학교 마스코트 횃불이 */}
-              <div className="relative w-40 h-40 sm:w-48 sm:h-48 mb-4 rounded-2xl overflow-hidden border-2 border-indigo-500/30 shadow-xl bg-slate-800/60 p-2">
-                <Image
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 mb-4 rounded-2xl overflow-hidden border-2 border-indigo-500/30 shadow-xl bg-slate-800/60 p-2 flex items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/Mascot.jpg"
                   alt="인천대학교 마스코트 횃불이"
-                  fill
-                  priority
-                  className="object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
 
