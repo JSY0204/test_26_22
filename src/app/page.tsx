@@ -513,7 +513,6 @@ export default function BrickBreakerApp() {
 
         // 패들 충돌 판정
         const paddleTop = CANVAS_HEIGHT - 22;
-        const paddleBottom = paddleTop + paddleHeight;
         if (
           nextY + ballRadius >= paddleTop &&
           ballYRef.current + ballRadius <= paddleTop + 6 &&
@@ -569,7 +568,6 @@ export default function BrickBreakerApp() {
 
             // 반사 방향 계산 (가장 가까운 모서리/변)
             const prevX = ballXRef.current;
-            const prevY = ballYRef.current;
 
             if (prevX + ballRadius <= b.x || prevX - ballRadius >= b.x + b.width) {
               ballDxRef.current = -ballDxRef.current;

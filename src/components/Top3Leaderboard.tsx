@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import { RecordItem, fetchTop3Records } from "@/lib/sheetService";
-import { Trophy, Medal, Flame, RefreshCw } from "lucide-react";
+import { Trophy, Flame, RefreshCw } from "lucide-react";
 
 export default function Top3Leaderboard() {
   const [topRecords, setTopRecords] = useState<RecordItem[]>([]);
@@ -19,8 +19,16 @@ export default function Top3Leaderboard() {
   }, []);
 
   useEffect(() => {
-    loadData();
-  }, [loadData]);
+    let ignore = false;
+    fetchTop3Records().then((top3) => {
+      if (!ignore) {
+        setTopRecords(top3);
+      }
+    });
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   const medalColors = [
     { bg: "from-amber-400 to-yellow-500", text: "text-amber-300", border: "border-amber-400/40", label: "1위" },

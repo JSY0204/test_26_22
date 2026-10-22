@@ -53,10 +53,18 @@ export default function RecordManagerDialog() {
   }, []);
 
   useEffect(() => {
+    let ignore = false;
     if (open) {
-      loadRecords();
+      fetchRecords().then((data) => {
+        if (!ignore) {
+          setRecords(data);
+        }
+      });
     }
-  }, [open, loadRecords]);
+    return () => {
+      ignore = true;
+    };
+  }, [open]);
 
   // 등록 핸들러 (Create)
   const handleCreate = async (e: React.FormEvent) => {
